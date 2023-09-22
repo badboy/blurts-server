@@ -5,7 +5,8 @@
 import { ReactNode } from "react";
 import { headers } from "next/headers";
 import Script from "next/script";
-import { getL10nBundles, getLocale } from "../functions/server/l10n";
+import { getL10nBundles } from "../functions/server/l10n";
+import { getLocale } from "../functions/universal/getLocale";
 import { L10nProvider } from "../../contextProviders/localization";
 import { ReactAriaI18nProvider } from "../../contextProviders/react-aria";
 

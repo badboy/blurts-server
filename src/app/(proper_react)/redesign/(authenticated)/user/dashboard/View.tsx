@@ -30,13 +30,13 @@ import { filterExposures } from "./filterExposures";
 import { SubscriberBreach } from "../../../../../../utils/subscriberBreaches";
 import { hasPremium } from "../../../../../functions/universal/user";
 import { LatestOnerepScanData } from "../../../../../../db/tables/onerep_scans";
+import { getLocale } from "../../../../../functions/universal/getLocale";
 
 export type Props = {
   featureFlagsEnabled: Pick<
     FeatureFlagsEnabled,
     "FreeBrokerScan" | "PremiumBrokerRemoval"
   >;
-  locale: string;
   user: Session["user"];
   userBreaches: SubscriberBreach[];
   userScanData: LatestOnerepScanData;
@@ -106,7 +106,7 @@ export const View = (props: Props) => {
       >
         <ExposureCard
           exposureData={exposure}
-          locale={props.locale}
+          locale={getLocale(l10n)}
           isPremiumBrokerRemovalEnabled={
             props.featureFlagsEnabled.PremiumBrokerRemoval
           }
